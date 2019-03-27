@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.frey.plugin'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -15,6 +15,21 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+buildscript{
+    repositories {
+        maven {
+            url uri('../repo')
+        }
+        maven {
+            url uri('../repos')
+        }
+    }
+
+    dependencies{
+        classpath 'com.frey.plugin:CustomGradlePlugin:1.0.0'
     }
 }
 
