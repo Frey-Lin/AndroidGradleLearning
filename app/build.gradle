@@ -18,17 +18,14 @@ android {
     }
 }
 
-buildscript{
+buildscript {
     repositories {
         maven {
             url uri('../repo')
         }
-        maven {
-            url uri('../repos')
-        }
     }
 
-    dependencies{
+    dependencies {
         classpath 'com.frey.plugin:CustomGradlePlugin:1.0.0'
     }
 }
@@ -40,4 +37,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+//插件中创建的扩展属性
+myExtension {
+    id '123'
+    name 'frey'
+    isEnable true
 }
